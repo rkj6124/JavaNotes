@@ -2,9 +2,11 @@
 
 ## Item 1 : Consider static factory methods instead of constructors
 
-```public static Boolean valueOf(boolean b) {
+```
+public static Boolean valueOf(boolean b) {
     return b ? Boolean.TRUE : Boolean.FALSE;
 }
+
 ```
 
 ### Advantages :
@@ -31,23 +33,23 @@ programmers to find.
 
 
 #### Here are some common names for static factory methods. This list is far from exhaustive:
-- from—A type-conversion method that takes a single parameter and returns a
+- <b>from</b> — A type-conversion method that takes a single parameter and returns a
 corresponding instance of this type, for example:
-Date d = Date.from(instant);
-- of—An aggregation method that takes multiple parameters and returns an instance of this type that incorporates them, for example:
-Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
-- valueOf—A more verbose alternative to from and of, for example:
-BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
-- instance or getInstance—Returns an instance that is described by its parameters (if any) but cannot be said to have the same value, for example:
-StackWalker luke = StackWalker.getInstance(options);
-- create or newInstance—Like instance or getInstance, except that the
+`Date d = Date.from(instant);`
+- <b>of</b> — An aggregation method that takes multiple parameters and returns an instance of this type that incorporates them, for example:
+`Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);`
+- <b>valueOf</b> — A more verbose alternative to from and of, for example:
+`BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);`
+- <b>instance or getInstance</b> — Returns an instance that is described by its parameters (if any) but cannot be said to have the same value, for example:
+`StackWalker luke = StackWalker.getInstance(options);`
+- <b>create or newInstance</b> — Like instance or getInstance, except that the
 method guarantees that each call returns a new instance, for example:
-Object newArray = Array.newInstance(classObject, arrayLen);
-- getType—Like getInstance, but used if the factory method is in a different
+`Object newArray = Array.newInstance(classObject, arrayLen);`
+- <b>getType</b> — Like getInstance, but used if the factory method is in a different
 class. Type is the type of object returned by the factory method, for example:
-FileStore fs = Files.getFileStore(path);
-- newType—Like newInstance, but used if the factory method is in a different
+`FileStore fs = Files.getFileStore(path);`
+- <b>newType</b> — Like newInstance, but used if the factory method is in a different
 class. Type is the type of object returned by the factory method, for example:
-BufferedReader br = Files.newBufferedReader(path);
-- type—A concise alternative to getType and newType, for example:
-List<Complaint> litany = Collections.list(legacyLitany);
+`BufferedReader br = Files.newBufferedReader(path);`
+- <b>type</b> — A concise alternative to getType and newType, for example:
+`List<Complaint> litany = Collections.list(legacyLitany);`
