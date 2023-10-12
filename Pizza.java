@@ -13,6 +13,7 @@ public abstract class Pizza {
         protected abstract T self();
     }
     Pizza(Builder<?> builder) {
+	System.out.println("here's a log");
         toppings = builder.toppings.clone(); // See Item 50
     }
 }
